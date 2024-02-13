@@ -1,10 +1,14 @@
 import setSearchResult from "./setSearchResults.js";
 import setMessage from "./setMessage.js";
+import getMessage from "./getMessage.js";
 
 const USERS_API = "https://api.github.com/search/users?q=";
 // const USERS_API = "https://api.github.com/search/users?q=apple+org";
 
 const performSearch = (searchTerm, isUserSelected) => {
+    
+    getMessage() && setMessage("");
+
     const typeQuery = isUserSelected ? "+type:user" : "+type:org";
 
     if (!searchTerm.trim()) {
